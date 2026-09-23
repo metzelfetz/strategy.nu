@@ -1,0 +1,22 @@
+---
+import SectionLabel from './SectionLabel.astro';
+import { section } from '../lib/content';
+const { data } = await section('approach');
+---
+<section class="block" id={data.id}>
+  <div class="wrap cols">
+    <SectionLabel order={data.order} title={data.title} />
+    <div>
+      <p class="intro">{data.intro}</p>
+      <ol class="steps">
+        {data.steps.map((s, i) => (
+          <li>
+            <span class="n" aria-hidden="true">{i + 1}</span>
+            <div><h3>{s.title}</h3><p class="sub">{s.subtitle}</p></div>
+            <p class="body">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+{
+  "title": "Strategy ApS – strategic advice and execution for SMEs",
+  "description": "Copenhagen-based strategic advisory for established SMEs and selected startups. From the first coffee to a plan that gets carried out.",
+  "email": "hello@strategy.nu",
+  "address": [
+    "Strategy ApS",
+    "Vesterbrogade 26, c/o Republikken",
+    "1620 Copenhagen, Denmark"
+  ],
+  "cvr": "44202271",
+  "nav": [
+    {
+      "label": "Field",
+      "href": "#field"
+    },
+    {
+      "label": "Approach",
+      "href": "#approach"
+    },
+    {
+      "label": "Team",
+      "href": "#team"
+    },
+    {
+      "label": "Network",
+      "href": "#network"
+    },
+    {
+      "label": "Rates",
+      "href": "#rates"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "cta": {
+    "label": "Book a coffee",
+    "subject": "Coffee"
+  },
+  "labels": {
+    "home": "Strategy – home",
+    "mainNav": "Main",
+    "menu": "Menu",
+    "expertise": "Expertise",
+    "languages": "Languages",
+    "privacy": "Privacy",
+    "updated": "Updated",
+    "cvr": "CVR"
+  }
+}

@@ -1,0 +1,17 @@
+---
+import Logo from './Logo.astro';
+import { site } from '../lib/site';
+import { href } from '../lib/util';
+---
+<footer>
+  <div class="wrap">
+    <div>
+      <Logo />
+      <p>{site.address.map((line, i) => <>{i > 0 && <br />}{line}</>)}</p>
+    </div>
+    <div>
+      <p>{site.labels.cvr} {site.cvr}</p>
+      <p><a href={href('privacy/')}>{site.labels.privacy}</a></p>
+    </div>
+  </div>
+</footer>

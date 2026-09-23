@@ -1,0 +1,22 @@
+---
+import Logo from './Logo.astro';
+import { site } from '../lib/site';
+import { href, mailto } from '../lib/util';
+const book = mailto(site.email, site.cta.subject);
+---
+<header class="top">
+  <div class="wrap">
+    <a href={href()} aria-label={site.labels.home}><Logo /></a>
+    <nav aria-label={site.labels.mainNav}>
+      {site.nav.map((n) => <a href={href(n.href)}>{n.label}</a>)}
+    </nav>
+    <a class="cta" href={book}>{site.cta.label}</a>
+    <details class="menu">
+      <summary>{site.labels.menu}</summary>
+      <div class="sheet">
+        {site.nav.map((n) => <a href={href(n.href)}>{n.label}</a>)}
+        <a href={book}><em>{site.cta.label}</em></a>
+      </div>
+    </details>
+  </div>
+</header>

@@ -1,7 +1,21 @@
 ---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Field from '../components/Field.astro';
+import Approach from '../components/Approach.astro';
+import Team from '../components/Team.astro';
+import Network from '../components/Network.astro';
+import Rates from '../components/Rates.astro';
+import Contact from '../components/Contact.astro';
 ---
-<!doctype html>
-<html lang="en">
-  <head><meta charset="utf-8"><title>Strategy ApS</title></head>
-  <body><h1>Strategy ApS</h1></body>
-</html>
+<Base>
+  <main id="top">
+    <Hero />
+    <Field />
+    <Approach />
+    <Team />
+    <Network />
+    <Rates />
+    <Contact />
+  </main>
+</Base>

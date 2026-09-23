@@ -1,0 +1,6 @@
+---
+import { roman } from '../lib/util';
+interface Props { order: number; title: string; tag?: 'h2' | 'p' }
+const { order, title, tag: Tag = 'h2' } = Astro.props;
+---
+<Tag class="label"><i aria-hidden="true">{roman(order)}</i>{title}</Tag>

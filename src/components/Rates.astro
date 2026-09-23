@@ -1,0 +1,24 @@
+---
+import SectionLabel from './SectionLabel.astro';
+import { section } from '../lib/content';
+import { site } from '../lib/site';
+import { mailto } from '../lib/util';
+const { data } = await section('rates');
+---
+<section class="block" id={data.id}>
+  <div class="wrap cols">
+    <SectionLabel order={data.order} title={data.title} />
+    <div>
+      <ul class="ratelist">
+        {data.items.map((r) => (
+          <li><a href={mailto(site.email, r.subject)}>
+            <span class="name">{r.name}</span><span class="dots" aria-hidden="true"></span>
+            <span class="price">{r.price}{r.unit && <small>{r.unit}</small>}</span>
+            <span class="note">{r.note}</span>
+          </a></li>
+        ))}
+      </ul>
+      <p class="fine">{data.note}</p>
+    </div>
+  </div>
+</section>

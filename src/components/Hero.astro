@@ -1,0 +1,15 @@
+---
+import { section } from '../lib/content';
+import { site } from '../lib/site';
+import { mailto } from '../lib/util';
+const { data } = await section('hero');
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{data.headline.map((line) => <span>{line}</span>)}</h1>
+    <div class="foot">
+      <p>{data.subline}</p>
+      <a class="cta solid" href={mailto(site.email, site.cta.subject)}>{data.cta}</a>
+    </div>
+  </div>
+</section>

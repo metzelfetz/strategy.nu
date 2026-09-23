@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import SectionLabel from './SectionLabel.astro';
+import { people, section } from '../lib/content';
+import { site } from '../lib/site';
+import { linkLabel, mailto, photo } from '../lib/util';
+const { data, Content } = await section('network');
+const network = await people('network');
+---
+<section class="block" id={data.id}>
+  <div class="wrap cols">
+    <SectionLabel order={data.order} title={data.title} />
+    <div>
+      <div class="lead"><Content /></div>
+      <div class="netlist">
+        {network.map(({ data: p, Content: Desc }) => (
+          <article class="net">
+            <Image class="pic" src={photo(p.photo)} alt={p.name} width={160} height={160} fit="cover" densities={[1]} />
+            <div>
+              <h3>{p.name}</h3>
+              <p class="meta">{[p.company, p.location].filter(Boolean).join(' · ')}</p>
+            </div>
+            <div>
+              <div class="desc"><Desc /></div>
+              <p class="exp">{p.expertise.join(' · ')}</p>
+              <a class="more" href={p.url}>{linkLabel(p.url)}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="aside">{data.cta.text} <a href={mailto(site.email, data.cta.subject)}>{data.cta.label}</a></p>
+    </div>
+  </div>
+</section>

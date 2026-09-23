@@ -1,0 +1,17 @@
+---
+import SectionLabel from './SectionLabel.astro';
+import { section } from '../lib/content';
+import { site } from '../lib/site';
+import { mailto } from '../lib/util';
+const { data, Content } = await section('contact');
+---
+<section class="block contact" id={data.id}>
+  <div class="wrap cols">
+    <SectionLabel order={data.order} title={data.title} tag="p" />
+    <div>
+      <h2>{data.heading}</h2>
+      <Content />
+      <a class="mail" href={mailto(data.email, site.cta.subject)}>{data.email}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/site';
+
+const page = await getEntry('pages', 'privacy');
+if (!page) throw new Error('Missing pages/privacy.md');
+const { Content } = await render(page);
+const updated = page.data.updated;
+const date = updated.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title={`${page.data.title} · ${site.address[0]}`}>
+  <main class="page">
+    <div class="wrap">
+      <h1>{page.data.title}</h1>
+      <p class="updated">{site.labels.updated} <time datetime={updated.toISOString().slice(0, 10)}>{date}</time></p>
+      <div class="prose"><Content /></div>
+    </div>
+  </main>
+</Base>

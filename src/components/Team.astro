@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import SectionLabel from './SectionLabel.astro';
+import { people, section } from '../lib/content';
+import { site } from '../lib/site';
+import { linkLabel, photo } from '../lib/util';
+const { data, Content } = await section('team');
+const team = await people('team');
+---
+<section class="block" id={data.id}>
+  <div class="wrap cols">
+    <SectionLabel order={data.order} title={data.title} />
+    <div>
+      <div class="lead"><Content /></div>
+      <div class="people">
+        {team.map(({ data: p, Content: Bio }) => (
+          <article class="person">
+            <Image class="pic" src={photo(p.photo)} alt={p.name} width={640} height={800} fit="cover" position="top"
+              widths={[360, 640]} sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 900px) 45vw, 26rem" />
+            <h3>{p.name}</h3>
+            <p class="role">{p.role}</p>
+            <div class="bio"><Bio /></div>
+            <dl class="facts">
+              <dt>{site.labels.expertise}</dt><dd>{p.expertise.join(', ')}</dd>
+              <dt>{site.labels.languages}</dt><dd>{p.languages.map((l) => `${l.language} (${l.level})`).join(', ')}</dd>
+            </dl>
+            <a class="more" href={p.linkedin}>{linkLabel(p.linkedin)}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
