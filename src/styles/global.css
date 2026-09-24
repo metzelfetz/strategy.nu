@@ -103,7 +103,7 @@ dl.facts dd { margin: 0; }
 .contact { background: var(--accent); color: var(--paper); border: 0; }
 .contact .label, .contact .label i { color: var(--paper); }
 .contact h2 { margin: 0 0 1.5rem; font-family: var(--serif); font-weight: 300; font-style: italic; font-size: var(--step-hero); line-height: .95; letter-spacing: -.03em; }
-.contact p { font-size: var(--step-1); max-width: 34rem; margin: 0 0 2rem; }
+.contact p:not(.label) { font-size: var(--step-1); max-width: 34rem; margin: 0 0 2rem; }
 .contact .mail { font-family: var(--serif); font-size: var(--step-3); text-underline-offset: .15em; text-decoration-thickness: 1px; word-break: break-word; }
 footer { padding-block: var(--space-l); font-size: var(--step--1); color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
