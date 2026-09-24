@@ -3,7 +3,7 @@ import SectionLabel from './SectionLabel.astro';
 import { section } from '../lib/content';
 const { data } = await section('approach');
 ---
-<section class="block" id={data.id}>
+<section class="block tint" id={data.id}>
   <div class="wrap cols">
     <SectionLabel order={data.order} title={data.title} />
     <div>
