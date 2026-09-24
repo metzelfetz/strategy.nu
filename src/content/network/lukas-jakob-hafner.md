@@ -13,4 +13,4 @@ expertise:
   - Product and systems thinking
 ---
 
-Strategist and maker who runs booncon, a small Helsinki studio for AI, automation and digital change. Finds where automation actually pays off, reworks how information and decisions move through a company, and then helps build it – directly, without junior account managers or slide decks.
+Tech strategist who runs booncon, a small Helsinki studio for AI, automation and digital change. Finds where automation actually pays off, reworks how information and decisions move through a company, and then helps build it – directly, without junior account managers or slide decks.
