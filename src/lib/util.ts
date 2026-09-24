@@ -25,3 +25,6 @@ export function photo(file: string): ImageMetadata {
   if (!hit) throw new Error(`Missing photo ${file}`);
   return hit.default;
 }
+
+/** True only on the production domain; staging is kept out of search indexes. */
+export const isProduction = (site: URL | undefined): boolean => site?.hostname === 'strategy.nu';

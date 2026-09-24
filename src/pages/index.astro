@@ -7,8 +7,12 @@ import Team from '../components/Team.astro';
 import Network from '../components/Network.astro';
 import Rates from '../components/Rates.astro';
 import Contact from '../components/Contact.astro';
+import { organization } from '../lib/jsonld';
+import { href } from '../lib/util';
+
+const jsonld = await organization(Astro.site!, href());
 ---
-<Base>
+<Base jsonld={jsonld}>
   <main id="top">
     <Hero />
     <Field />
