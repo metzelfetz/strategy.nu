@@ -13,7 +13,6 @@ export async function organization(origin: URL, home: string) {
     url: new URL(home, origin).href,
     logo: new URL(`${home}apple-touch-icon.png`, origin).href,
     description: site.description,
-    email: site.email,
     taxID: site.cvr,
     address: {
       '@type': 'PostalAddress',
