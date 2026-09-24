@@ -12,15 +12,24 @@ const photo = text.refine(
   { message: 'Photo not found in src/assets/photos/' },
 );
 const base = { title: text, order: z.number().int().min(0) };
+// Mood images for sections. `credit` records the source; it is not shown on the page.
+const image = z.strictObject({
+  file: text.refine(
+    (file) => existsSync(join(process.cwd(), 'src/assets/images', file)),
+    { message: 'Image not found in src/assets/images/' },
+  ),
+  alt: text,
+  credit: text,
+});
 
 const sections = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/sections' }),
   schema: z.discriminatedUnion('id', [
     z.strictObject({ id: z.literal('hero'), ...base, headline: z.array(text).min(1), subline: text, cta: text }),
-    z.strictObject({ id: z.literal('field'), ...base, segments: z.array(z.strictObject({ title: text, body: text })).min(1) }),
+    z.strictObject({ id: z.literal('field'), ...base, segments: z.array(z.strictObject({ title: text, image: image.optional(), body: text })).min(1) }),
     z.strictObject({
       id: z.literal('approach'), ...base, intro: text,
-      steps: z.array(z.strictObject({ title: text, subtitle: text, body: text })).min(1),
+      steps: z.array(z.strictObject({ title: text, subtitle: text, image: image.optional(), body: text })).min(1),
     }),
     z.strictObject({ id: z.literal('team'), ...base }),
     z.strictObject({ id: z.literal('network'), ...base, cta: z.strictObject({ text, label: text, subject: text }) }),

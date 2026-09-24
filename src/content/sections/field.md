@@ -4,8 +4,16 @@ title: Field
 order: 1
 segments:
   - title: Established SMEs
+    image:
+      file: field-smes.jpg
+      alt: A row of industrial silos against a cloudy sky
+      credit: Generated with Google Gemini, edited by Strategy
     body: Companies at a crossroads. Competition gets tougher, the market consolidates, regulation tightens, a change of ownership between generations is coming, or new technology puts the business model in question. Sometimes the direction has simply blurred.
   - title: Selected startups
+    image:
+      file: field-startups.jpg
+      alt: A tidy desk with a laptop, keyboard and notebook, seen from above
+      credit: Generated with Google Gemini, edited by Strategy
     body: Early-stage ventures that are ready for systematic strategy. We are selective. We only take one on if it has real potential and we are sure our involvement will make the difference. Startups can rarely pay full rates, so when we believe in one, we invest part of our time instead.
 ---
 

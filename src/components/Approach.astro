@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import SectionLabel from './SectionLabel.astro';
 import { section } from '../lib/content';
+import { image } from '../lib/util';
 const { data } = await section('approach');
 ---
 <section class="block tint" id={data.id}>
@@ -12,8 +14,15 @@ const { data } = await section('approach');
         {data.steps.map((s, i) => (
           <li>
             <span class="n" aria-hidden="true">{i + 1}</span>
-            <div><h3>{s.title}</h3><p class="sub">{s.subtitle}</p></div>
-            <p class="body">{s.body}</p>
+            <div class="text">
+              <h3>{s.title}</h3>
+              <p class="sub">{s.subtitle}</p>
+              <p class="body">{s.body}</p>
+            </div>
+            {s.image && (
+              <Image class="mood" src={image(s.image.file)} alt={s.image.alt} width={800} height={600} fit="cover"
+                widths={[400, 800]} sizes="(max-width: 900px) calc(100vw - 2.5rem), 22rem" />
+            )}
           </li>
         ))}
       </ol>

@@ -62,11 +62,14 @@ section.tint { background: var(--panel); }
 
 .intro { margin: 0 0 var(--space-l); font-family: var(--serif); font-style: italic; font-size: var(--step-1); color: var(--muted); }
 .steps { list-style: none; margin: 0; padding: 0; }
-.steps li { display: grid; grid-template-columns: 4rem 16rem 1fr; gap: 1rem 2rem; padding-block: 1.75rem; }
+.steps li { display: grid; grid-template-columns: 4rem 1fr minmax(0, 22rem); gap: 1rem 2.5rem; align-items: start; padding-block: 2.25rem; }
+.steps li:first-child { padding-top: 0; }
 .steps .n { font-family: var(--serif); font-size: 2.25rem; font-weight: 300; line-height: 1; color: var(--accent); font-variant-numeric: oldstyle-nums; }
 .steps h3 { margin: 0; font-family: var(--serif); font-size: var(--step-3); font-weight: 400; line-height: 1; letter-spacing: -.02em; }
 .steps .sub { margin: .5rem 0 0; font-size: var(--step--1); color: var(--muted); }
-.steps p.body { margin: 0; max-width: 38rem; }
+.steps p.body { margin: 1rem 0 0; max-width: 38rem; }
+.mood { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-deep); }
+.two .mood { margin-bottom: 1.25rem; }
 
 .people { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: var(--space-l); }
 .person .pic { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.04); background: var(--paper-deep); mix-blend-mode: multiply; }
@@ -121,7 +124,7 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 900px) {
   .cols { grid-template-columns: 1fr; }
   .steps li { grid-template-columns: 3rem 1fr; }
-  .steps p.body { grid-column: 2; }
+  .steps .mood { grid-column: 1 / -1; grid-row: 1; margin-bottom: .5rem; }
   .net { grid-template-columns: 4rem 1fr; }
   .net > div:last-child { grid-column: 2; }
   .net .pic { width: 4rem; height: 4rem; }

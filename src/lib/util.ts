@@ -28,3 +28,10 @@ export function photo(file: string): ImageMetadata {
 
 /** True only on the production domain; staging is kept out of search indexes. */
 export const isProduction = (site: URL | undefined): boolean => site?.hostname === 'strategy.nu';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*', { eager: true });
+export function image(file: string): ImageMetadata {
+  const hit = images[`../assets/images/${file}`];
+  if (!hit) throw new Error(`Missing image ${file}`);
+  return hit.default;
+}
