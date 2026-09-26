@@ -6,4 +6,4 @@ heading: Let's talk.
 email: hello@strategy.nu
 ---
 
-Tell us briefly where you stand, and we will suggest a time for coffee.
+Shoot us a message and let's have a coffee.
