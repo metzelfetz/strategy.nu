@@ -113,9 +113,12 @@ dl.facts dd { margin: 0; }
 .contact h2 { margin: 0 0 1.5rem; font-family: var(--serif); font-weight: 300; font-style: italic; font-size: clamp(2.75rem, 1.5rem + 4vw, 5rem); line-height: .95; letter-spacing: -.03em; }
 .contact p:not(.label) { font-size: var(--step-1); max-width: 34rem; margin: 0 0 2rem; }
 .contact .mail { font-family: var(--serif); font-size: var(--step-3); text-underline-offset: .15em; text-decoration-thickness: 1px; word-break: break-word; }
-footer { padding-block: var(--space-l); font-size: var(--step--1); color: var(--muted); }
+/* The footer continues the purple contact block, separated by a light hairline. */
+footer { background: var(--accent); color: rgb(255 255 255 / .88); padding-block: var(--space-l); font-size: var(--step--1); }
+main:has(.contact) + footer { padding-top: 0; }
+main:has(.contact) + footer .wrap { border-top: 1px solid rgb(255 255 255 / .28); padding-top: var(--space-l); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
-footer .logo { width: 92px; margin-bottom: .75rem; }
+footer .logo { width: 92px; margin-bottom: .75rem; color: #fff; }
 footer p { margin: 0; }
 
 .page { padding-block: var(--space-xl); }
@@ -125,7 +128,8 @@ footer p { margin: 0; }
 .prose h2 { margin: var(--space-l) 0 .75rem; padding-top: var(--space-m); border-top: 1px solid var(--rule); font-family: var(--serif); font-weight: 400; font-size: var(--step-2); line-height: 1.2; }
 .prose p { margin: 0 0 1rem; }
 .prose a { color: var(--accent); text-underline-offset: .2em; }
-footer a:hover { color: var(--accent); }
+footer a { text-underline-offset: .2em; }
+footer a:hover { color: #fff; }
 
 @media (max-width: 900px) {
   .cols { grid-template-columns: 1fr; }
