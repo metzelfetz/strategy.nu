@@ -49,7 +49,12 @@ a { color: inherit; }
 .hero h1 span + span { font-style: italic; padding-left: .6em; }
 .hero .foot { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--space-m); margin-top: var(--space-l); padding-top: var(--space-m); }
 .hero p { margin: 0; max-width: 32rem; font-family: var(--serif); font-size: var(--step-2); line-height: 1.3; }
-.hero .bleed { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 100%; margin-top: var(--space-l); background: var(--paper-deep); }
+/* With an image the headline is painted onto the wall: live text, the brick shows through the paint. */
+.hero.cover { padding-top: 0; }
+.hero .wall { position: relative; }
+.hero .bleed { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 100%; background: var(--paper-deep); }
+.hero .wall .wrap { position: absolute; inset: 0; display: flex; align-items: center; }
+.hero .painted { color: rgb(255 255 255 / .9); mix-blend-mode: hard-light; text-shadow: 0 0 1px rgb(0 0 0 / .15); }
 
 section.block { padding-block: var(--space-xl); }
 section.tint { background: var(--panel); }
@@ -124,7 +129,7 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 900px) {
   .cols { grid-template-columns: 1fr; }
-  .hero .bleed { aspect-ratio: 4 / 3; }
+  .hero .bleed { aspect-ratio: 4 / 3; object-position: 8% 100%; }
   .steps li { grid-template-columns: 3rem 1fr; }
   .steps .mood { grid-column: 1 / -1; grid-row: 1; margin-bottom: .5rem; }
   .net { grid-template-columns: 4rem 1fr; }
