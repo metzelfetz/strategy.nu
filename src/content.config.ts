@@ -25,7 +25,7 @@ const image = z.strictObject({
 const sections = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/sections' }),
   schema: z.discriminatedUnion('id', [
-    z.strictObject({ id: z.literal('hero'), ...base, headline: z.array(text).min(1), subline: text, cta: text }),
+    z.strictObject({ id: z.literal('hero'), ...base, headline: z.array(text).min(1), subline: text, cta: text, image: image.optional() }),
     z.strictObject({ id: z.literal('field'), ...base, segments: z.array(z.strictObject({ title: text, image: image.optional(), body: text })).min(1) }),
     z.strictObject({
       id: z.literal('approach'), ...base, intro: text,

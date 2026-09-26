@@ -1,12 +1,19 @@
 ---
+import { Image } from 'astro:assets';
 import { section } from '../lib/content';
 import { site } from '../lib/site';
-import { mailto } from '../lib/util';
+import { image, mailto } from '../lib/util';
 const { data } = await section('hero');
 ---
 <section class="hero">
   <div class="wrap">
     <h1>{data.headline.map((line) => <span>{line}</span>)}</h1>
+  </div>
+  {data.image && (
+    <Image class="bleed" src={image(data.image.file)} alt={data.image.alt} widths={[800, 1376]} sizes="100vw"
+      loading="eager" fetchpriority="high" />
+  )}
+  <div class="wrap">
     <div class="foot">
       <p>{data.subline}</p>
       <a class="cta solid" href={mailto(site.email, site.cta.subject)}>{data.cta}</a>
