@@ -14,9 +14,9 @@ steps:
   - title: Clarity.
     subtitle: Value analysis
     image:
-      file: approach-clarity.png
-      alt: A leadership dashboard with key figures and one highlighted warning
-      credit: Rendered by Strategy, fictional figures
+      file: approach-clarity.jpg
+      alt: A printed bar chart on a sheet of paper with a pencil beside it, one bar in red
+      credit: Generated with Google Gemini, edited by Strategy
     body: Before anything is agreed, we run a short analysis of where we can add real value. If we are not the right partner, we say so. If we are, you know exactly why.
   - title: Plan.
     subtitle: Strategy workshop
