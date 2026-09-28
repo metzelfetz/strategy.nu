@@ -4,11 +4,11 @@ title: Rates
 order: 5
 note: All prices excl. VAT.
 items:
-  - name: Consulting
+  - name: Strategic advice
     price: DKK 2,000
     unit: per hour
     note: Advice on a specific decision or problem, by the hour.
-    subject: Consulting
+    subject: Strategic advice
   - name: Workshop
     price: DKK 20,000
     unit: per day
