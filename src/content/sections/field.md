@@ -12,7 +12,7 @@ segments:
   - title: Selected startups
     image:
       file: field-startups.jpg
-      alt: A tidy desk with a laptop, keyboard and notebook, seen from above
+      alt: A tidy desk with a laptop, phone and notebook, seen from above
       credit: Generated with Google Gemini, edited by Strategy
     body: Early-stage ventures that are ready for systematic strategy. We are selective. We only take one on if it has real potential and we are sure our involvement will make the difference. Startups can rarely pay full rates, so when we believe in one, we invest part of our time instead.
 ---
