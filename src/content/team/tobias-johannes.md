@@ -18,4 +18,4 @@ expertise:
   - Chemicals manufacturing
 ---
 
-Tobias wrote the multi-year strategy for his family business and carried it out: he hired key people, restructured operations and closed M&A deals. Today he converts former industrial sites into mixed-use areas.
+Tobias developed the multi-year strategy for his family business and saw its execution through: he hired key people, restructured operations and closed M&A deals. Today he converts former industrial sites into mixed-use areas.
