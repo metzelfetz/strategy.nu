@@ -12,4 +12,4 @@ expertise:
   - Change management
 ---
 
-CEO in the building materials industry. Thinks in the big picture, drives growth through market knowledge and a wide network, and builds teams that are open to change.
+CEO in the building materials industry. Thinks in the big picture, drives growth through market knowledge and a wide network, and builds teams that are driving change.
