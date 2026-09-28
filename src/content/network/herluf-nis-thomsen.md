@@ -6,6 +6,7 @@ location: Copenhagen, Denmark
 url: https://www.linkedin.com/in/herlufthomsen/
 photo: herluf-nis-thomsen.jpg
 expertise:
+  - Strategic project management
   - Healthcare partnerships
   - Public affairs
   - Patient communication

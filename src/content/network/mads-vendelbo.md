@@ -1,5 +1,6 @@
 ---
 name: Mads Vendelbo
+company: passim
 order: 3
 location: Copenhagen, Denmark
 url: https://www.madsvendelbo.com/
