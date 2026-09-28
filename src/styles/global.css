@@ -98,8 +98,8 @@ dl.facts dd { margin: 0; }
 .aside a { color: var(--accent); font-style: italic; text-underline-offset: .2em; }
 
 .ratelist { list-style: none; margin: 0; padding: 0; }
-.ratelist a { display: grid; grid-template-columns: auto 1fr auto; gap: 0 1rem; align-items: baseline; padding-block: 1.5rem; border-top: 1px solid var(--rule); text-decoration: none; }
-.ratelist li:last-child a { border-bottom: 1px solid var(--rule); }
+.ratelist a { display: grid; grid-template-columns: auto 1fr auto; gap: 0 1rem; align-items: baseline; padding-block: 1.25rem; text-decoration: none; }
+.ratelist li:first-child a { padding-top: 0; }
 .ratelist .name { font-family: var(--serif); font-size: var(--step-2); }
 .ratelist .dots { border-bottom: 1px dotted var(--muted); transform: translateY(-.3em); }
 .ratelist .price { font-family: var(--serif); font-size: var(--step-2); font-variant-numeric: lining-nums tabular-nums; }
