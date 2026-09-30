@@ -29,4 +29,4 @@ You can ask for access to, correction or deletion of your data, ask us to restri
 
 ## Complaints
 
-You can complain to the Danish Data Protection Agency (Datatilsynet), Carl Jacobsens Vej 35, 2500 Valby, www.datatilsynet.dk.
+You can complain to the Danish Data Protection Agency (Datatilsynet), Carl Jacobsens Vej 35, 2500 Valby, [www.datatilsynet.dk](https://www.datatilsynet.dk/).
