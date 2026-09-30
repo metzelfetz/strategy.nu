@@ -38,7 +38,11 @@ Commit on `staging`, see [Release flow](#release-flow).
 
 ### A section
 
-One file per section in `src/content/sections/`: `hero`, `field`, `approach`, `team`, `network`, `rates` and `contact`. The frontmatter holds the structured parts (headline lines, segments, steps, rates) and the body holds the prose. Nav labels, the email address, the address and the CVR number are in `src/content/site.json`. The privacy page is `src/content/pages/privacy.md`; set `updated` in its frontmatter when the text changes.
+One file per section in `src/content/sections/`: `hero`, `field`, `approach`, `team`, `network`, `rates` and `contact`. The frontmatter holds the structured parts (headline lines, segments, steps, rates) and the body holds the prose. Nav labels, the email address, the address and the CVR number are in `src/content/site.json`. The privacy page is `src/content/pages/privacy.md`; set `updated` in its frontmatter when the text changes. The 404 page is `src/content/pages/404.md`.
+
+### Search and discovery
+
+The page title and meta description are `title` and `description` in `site.json`. The JSON-LD on the home page (`src/lib/jsonld.ts`) is built from `site.json`, `rates.md` and the team files; its business facts (type, founding date, area served, `sameAs` profile links) are under `org` in `site.json`. `llms.txt` and `sitemap.xml` are generated at build time from the same files, so they follow any content change. The home page's `lastmod` is the date of the last commit under `src/`, which is why both workflows check out the full history.
 
 Copy rules are in the project's conventions: plain wording, en dashes, prices in DKK, English only.
 
