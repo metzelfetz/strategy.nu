@@ -8,6 +8,18 @@
     "1620 Copenhagen, Denmark"
   ],
   "cvr": "44202271",
+  "org": {
+    "type": "ProfessionalService",
+    "alternateName": "strategy.nu",
+    "foundingDate": "2023-07-25",
+    "countryCode": "DK",
+    "areaServed": [
+      "Denmark"
+    ],
+    "sameAs": [
+      "https://datacvr.virk.dk/enhed/virksomhed/44202271"
+    ]
+  },
   "nav": [
     {
       "label": "Field",
@@ -46,6 +58,7 @@
     "languages": "Languages",
     "privacy": "Privacy",
     "updated": "Updated",
-    "cvr": "CVR"
+    "cvr": "CVR",
+    "links": "Pages"
   }
 }

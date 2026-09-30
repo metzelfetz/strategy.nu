@@ -11,6 +11,15 @@ export const site = z.strictObject({
   email: z.email(),
   address: z.array(text).min(1),
   cvr: text,
+  // Facts for the JSON-LD only; nothing here is shown on the page.
+  org: z.strictObject({
+    type: z.enum(['ProfessionalService', 'LocalBusiness']),
+    alternateName: text,
+    foundingDate: z.iso.date(),
+    countryCode: z.string().regex(/^[A-Z]{2}$/),
+    areaServed: z.array(text).min(1),
+    sameAs: z.array(z.url()),
+  }),
   nav: z.array(z.strictObject({ label: text, href: z.string().regex(/^#[a-z]+$/) })).min(1),
   cta: z.strictObject({ label: text, subject: text }),
   labels: z.strictObject({
@@ -22,5 +31,6 @@ export const site = z.strictObject({
     privacy: text,
     updated: text,
     cvr: text,
+    links: text,
   }),
 }).parse(raw);
