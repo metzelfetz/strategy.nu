@@ -57,7 +57,7 @@ export const GET: APIRoute = async ({ site: origin }) => {
 
     `## ${contact.data.title}`,
     `${contact.data.heading} ${contact.body} [${contact.data.email}](mailto:${contact.data.email})`,
-    `${site.address.join(', ')}. ${site.labels.cvr} ${site.cvr}.`,
+    `${site.address.join(', ')}. ${site.labels.cvr} ${site.cvr}. [${linkLabel(site.linkedin)}](${site.linkedin})`,
 
     `## ${site.labels.links}`,
     [

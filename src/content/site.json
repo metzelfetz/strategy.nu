@@ -8,6 +8,7 @@
     "1620 Copenhagen, Denmark"
   ],
   "cvr": "44202271",
+  "linkedin": "https://www.linkedin.com/company/strategy-aps",
   "org": {
     "type": "ProfessionalService",
     "alternateName": "strategy.nu",
@@ -17,7 +18,6 @@
       "Denmark"
     ],
     "sameAs": [
-      "https://www.linkedin.com/company/strategy-aps",
       "https://datacvr.virk.dk/enhed/virksomhed/44202271"
     ]
   },

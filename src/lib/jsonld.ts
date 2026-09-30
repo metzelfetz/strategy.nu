@@ -67,7 +67,7 @@ export async function homeGraph(origin: URL, home: string) {
           addressCountry: site.org.countryCode,
         },
         areaServed: site.org.areaServed.map((n) => ({ '@type': 'Country', name: n })),
-        ...(site.org.sameAs.length && { sameAs: site.org.sameAs }),
+        sameAs: [site.linkedin, ...site.org.sameAs],
         member: team.map((t) => ({
           '@type': 'Person', name: t.data.name, jobTitle: t.data.role, sameAs: t.data.linkedin,
         })),

@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import { site } from '../lib/site';
-import { href } from '../lib/util';
+import { href, linkLabel } from '../lib/util';
 ---
 <footer>
   <div class="wrap">
@@ -11,6 +11,7 @@ import { href } from '../lib/util';
     </div>
     <div>
       <p>{site.labels.cvr} {site.cvr}</p>
+      <p><a href={site.linkedin}>{linkLabel(site.linkedin)}</a></p>
       <p><a href={href('privacy/')}>{site.labels.privacy}</a></p>
     </div>
   </div>
