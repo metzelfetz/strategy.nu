@@ -3,15 +3,14 @@ import Logo from './Logo.astro';
 import { site } from '../lib/site';
 import { href, linkLabel } from '../lib/util';
 
-// Emoji in the credit line get a light tile so they stay visible on the purple.
-const credit = site.credit.replace('{year}', String(new Date().getFullYear())).split(/(\p{Extended_Pictographic}\uFE0F?)/u);
+const credit = site.credit.replace('{year}', String(new Date().getFullYear()));
 ---
 <footer>
   <div class="wrap">
     <div>
       <Logo />
       <p>{site.address.map((line, i) => <>{i > 0 && <br />}{line}</>)}</p>
-      <p class="credit">{credit.map((part, i) => (i % 2 ? <span class="emoji">{part}</span> : part))}</p>
+      <p class="credit">{credit}</p>
     </div>
     <div>
       <p>{site.labels.cvr} {site.cvr}</p>
