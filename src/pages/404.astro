@@ -1,0 +1,21 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/site';
+import { href } from '../lib/util';
+
+// GitHub Pages serves dist/404.html for every unknown path.
+const page = await getEntry('pages', '404');
+if (!page?.data.headline || !page.data.home) throw new Error('pages/404.md needs `headline` and `home`');
+const { Content } = await render(page);
+---
+<Base title={`${page.data.title} · ${site.address[0]}`} noindex>
+  <main class="page lost">
+    <div class="wrap">
+      <p class="label"><i aria-hidden="true">404</i> {page.data.title}</p>
+      <h1>{page.data.headline.map((line) => <span>{line}</span>)}</h1>
+      <div class="prose"><Content /></div>
+      <a class="cta solid" href={href()}>{page.data.home}</a>
+    </div>
+  </main>
+</Base>

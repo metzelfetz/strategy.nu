@@ -69,7 +69,13 @@ const network = defineCollection({
 
 const pages = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/pages' }),
-  schema: z.strictObject({ title: text, updated: z.coerce.date() }),
+  // privacy.md needs `updated`; 404.md needs `headline` and `home` (the link label).
+  schema: z.strictObject({
+    title: text,
+    updated: z.coerce.date().optional(),
+    headline: z.array(text).min(1).optional(),
+    home: text.optional(),
+  }),
 });
 
 export const collections = { sections, team, network, pages };

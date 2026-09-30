@@ -7,6 +7,7 @@ const page = await getEntry('pages', 'privacy');
 if (!page) throw new Error('Missing pages/privacy.md');
 const { Content } = await render(page);
 const updated = page.data.updated;
+if (!updated) throw new Error('pages/privacy.md needs `updated`');
 const date = updated.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 <Base title={`${page.data.title} · ${site.address[0]}`}>

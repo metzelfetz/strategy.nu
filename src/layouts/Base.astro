@@ -6,8 +6,8 @@ import Footer from '../components/Footer.astro';
 import { site } from '../lib/site';
 import { href, isProduction } from '../lib/util';
 
-interface Props { title?: string; description?: string; jsonld?: object }
-const { title = site.title, description = site.description, jsonld } = Astro.props;
+interface Props { title?: string; description?: string; jsonld?: object; noindex?: boolean }
+const { title = site.title, description = site.description, jsonld, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(href('og.png'), Astro.site).href;
 ---
@@ -18,8 +18,8 @@ const ogImage = new URL(href('og.png'), Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {!isProduction(Astro.site) && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {(noindex || !isProduction(Astro.site)) && <meta name="robots" content="noindex" />}
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href={href('favicon.svg')} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={href('apple-touch-icon.png')} />

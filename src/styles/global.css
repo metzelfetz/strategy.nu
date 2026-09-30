@@ -124,6 +124,12 @@ footer p { margin: 0; }
 .page { padding-block: var(--space-xl); }
 .page h1 { margin: 0 0 .5rem; font-family: var(--serif); font-weight: 350; font-size: var(--step-3); line-height: 1; letter-spacing: -.02em; }
 .page .updated { margin: 0 0 var(--space-l); font-size: var(--step--1); color: var(--muted); }
+/* 404: the label style, then a two-line headline like the hero's, smaller. */
+.lost .label { margin-bottom: var(--space-l); }
+.lost h1 { margin: 0 0 var(--space-l); font-size: clamp(2.75rem, 1.5rem + 5vw, 6rem); font-weight: 350; line-height: .95; letter-spacing: -.03em; }
+.lost h1 span { display: block; }
+.lost h1 span + span { font-style: italic; padding-left: .6em; }
+.lost .prose { margin-bottom: var(--space-l); }
 .prose { max-width: 44rem; }
 .prose h2 { margin: var(--space-l) 0 .75rem; padding-top: var(--space-m); border-top: 1px solid var(--rule); font-family: var(--serif); font-weight: 400; font-size: var(--step-2); line-height: 1.2; }
 .prose p { margin: 0 0 1rem; }
@@ -145,7 +151,7 @@ footer a:hover { color: #fff; }
   .menu { display: block; }
   .two, .people { grid-template-columns: 1fr; gap: 2rem; }
   .hero .foot { grid-template-columns: 1fr; }
-  .hero h1 span + span { padding-left: 0; }
+  .hero h1 span + span, .lost h1 span + span { padding-left: 0; }
   .ratelist a { grid-template-columns: 1fr auto; }
   .ratelist .dots { display: none; }
 }
