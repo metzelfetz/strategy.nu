@@ -12,8 +12,8 @@ const { data } = await section('rates');
       <ul class="ratelist">
         {data.items.map((r) => (
           <li><a href={mailto(site.email, r.subject)}>
-            <span class="name">{r.name}</span><span class="dots" aria-hidden="true"></span>
-            <span class="price">{r.price}{r.unit && <small>{r.unit}</small>}</span>
+            <span class="name">{r.name}</span>{' '}<span class="dots" aria-hidden="true"></span>{' '}
+            <span class="price">{r.price}{r.unit && <>{' '}<small>{r.unit}</small></>}</span>{' '}
             <span class="note">{r.note}</span>
           </a></li>
         ))}
