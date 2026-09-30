@@ -134,7 +134,8 @@ footer p { margin: 0; }
 .prose h2 { margin: var(--space-l) 0 .75rem; padding-top: var(--space-m); border-top: 1px solid var(--rule); font-family: var(--serif); font-weight: 400; font-size: var(--step-2); line-height: 1.2; }
 .prose p { margin: 0 0 1rem; }
 .prose a { color: var(--accent); text-underline-offset: .2em; }
-footer a { text-underline-offset: .2em; }
+/* Padding lifts the stacked footer links to the 24 px touch-target minimum. */
+footer a { display: inline-block; padding-block: .25rem; text-underline-offset: .2em; }
 footer a:hover { color: #fff; }
 
 @media (max-width: 900px) {
