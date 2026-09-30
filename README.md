@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-The dev server runs on http://localhost:4321/strategy.nu/. For the built site, which is what gets released:
+The dev server runs on http://localhost:4321/. For the built site, which is what gets released:
 
 ```bash
 npm run build
@@ -63,7 +63,7 @@ git checkout staging
 
 A fast-forward is the only kind of release. If `--ff-only` refuses, `main` has a commit that `staging` lacks; merge `main` into `staging` first. A repository ruleset blocks force-pushes to `main` and deleting it.
 
-Until the cutover the site is at https://metzelfetz.github.io/strategy.nu/ and is marked `noindex`. The `site` and `base` values in `astro.config.mjs` decide that, and they change when the custom domain goes live.
+The site is served at https://strategy.nu. The custom domain is set in the repository's Pages settings, not by a `CNAME` file, because a workflow deploy ignores that file. `site` in `astro.config.mjs` must stay `https://strategy.nu`: on any other host the build marks every page `noindex` and `robots.txt` disallows crawling.
 
 ## Images and fonts
 

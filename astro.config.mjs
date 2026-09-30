@@ -1,10 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Staging on GitHub Pages lives under /strategy.nu/. At cutover (s5) `site`
-// becomes https://strategy.nu and `base` becomes '/'.
+// Production is the custom domain on GitHub Pages. `site` drives robots.txt,
+// the noindex, the canonical and every absolute URL (see isProduction()).
 export default defineConfig({
-  site: 'https://metzelfetz.github.io',
-  base: '/strategy.nu/',
+  site: 'https://strategy.nu',
+  base: '/',
   build: { inlineStylesheets: 'always' },
 });
