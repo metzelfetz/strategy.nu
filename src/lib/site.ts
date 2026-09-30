@@ -13,6 +13,8 @@ export const site = z.strictObject({
   cvr: text,
   // The company page, linked in the footer and listed first in the JSON-LD `sameAs`.
   linkedin: z.url(),
+  // The footer credit line; {year} becomes the build year.
+  credit: text.regex(/\{year\}/),
   // Facts for the JSON-LD only; nothing here is shown on the page.
   org: z.strictObject({
     type: z.enum(['ProfessionalService', 'LocalBusiness']),
